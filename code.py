@@ -34,11 +34,11 @@ for bmp_path in bmp_files:
 
     # ================== PREPROCESS ==================
     gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
-    blur = cv2.GaussianBlur(gray, (5, 5), 0)
+    blur = cv2.GaussianBlur(gray, (5, 5), 0)    #để đọc thêm tài liệu
     background = cv2.GaussianBlur(blur, (51, 51), 0)
     clean = cv2.subtract(blur, background)
 
-    # ================== THRESHOLD ==================
+    # ================== THRESHOLD ================== (đọc thêm tài liệu)
     mean = np.mean(clean)
     std = np.std(clean)
     k = 4
